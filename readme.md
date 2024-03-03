@@ -14,6 +14,11 @@ A simple but good lucking player list UI for RedM. Has NUI focus to allow player
 # Installation
 - Drag and drop into your resources, make sure it is started
 
+# Usage
+- Press Del to open player list or use command /playerlist (changeable in client file)
+- Config allows restricting usage to users with specific perms that you choose
+- NUI focus to allow copying a players steam ID for reporting and other support purposes
+
 # Changes
 ### 2.0
 - Added ID's above player heads while in the playerlist
