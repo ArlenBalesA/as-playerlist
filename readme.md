@@ -13,3 +13,6 @@ A simple but good lucking player list UI for RedM. Has NUI focus to allow player
 
 # Installation
 - Drag and drop into your resources, make sure it is started
+
+# Usage
+- Press Del to open player list or use command /playerlist
