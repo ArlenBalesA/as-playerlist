@@ -3,7 +3,7 @@
 - tebex : https://asgardrp.tebex.io/
 - github: https://github.com/ArlenBalesA
 
-- preview: https://i.imgur.com/6eTZdNX.png
+- preview: https://i.imgur.com/Ovn5tMe.png
 
 # Asgard PlayerList by ArlenBales
 A simple but good lucking player list UI for RedM. Has NUI focus to allow players to copy steam liceneses for player reporting.
