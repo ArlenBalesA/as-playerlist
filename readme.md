@@ -13,6 +13,7 @@ A simple but good lucking player list UI for RedM. Has NUI focus to allow player
 
 # Installation
 - Drag and drop into your resources, make sure it is started
+- DEL key opens the menu
 
 # Changes
 ### 2.0
