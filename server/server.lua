@@ -1,7 +1,6 @@
 local activePlayers = {}
 local disconnectedPlayers = {}
 AS = {}
-RSGCore = exports['rsg-core']:GetCoreObject()
 
 AddEventHandler('playerConnecting', function()
     local player = source 
@@ -19,35 +18,18 @@ AddEventHandler('playerDropped', function(reason)
 end)
 
 
-RegisterNetEvent('as-playerlist:server:manualUpdate')
-AddEventHandler('as-playerlist:server:manualUpdate', function()
+RegisterNetEvent('as-playerlist:server:getPlayers')
+AddEventHandler('as-playerlist:server:getPlayers', function()
     local src = source
-    if permission(src) then
-        TriggerClientEvent('as-playerlist:client:manualUpdate', src, activePlayers,disconnectedPlayers)
-    else
-    end
+        TriggerClientEvent('as-playerlist:client:getPlayers', src, activePlayers,disconnectedPlayers)
 end)
+
 function GetPlayerInfo(player)
     local steamName = GetPlayerName(player) 
     local playerId = player 
     local playerIdentifier = GetPlayerIdentifier(player, 0)
 
     return steamName, playerId, playerIdentifier
-end
-
-function permission(source)
-    if AS.Perms["public"] then 
-        local xPlayer = RSGCore.Functions.GetPlayer(source)
-        local perms = xPlayer.Functions.GetPermission()
-        for k, v in ipairs(AS.Perms["perms"]) do
-            if perms == v then
-                return true
-            end
-        end
-        return false
-    else
-        return true
-    end
 end
 
 function tableIndex(tbl, value)

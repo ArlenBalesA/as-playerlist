@@ -1,3 +1,5 @@
+var configg = null;
+
 window.addEventListener("message", function (e) {
   e = e.data
   switch (e.type) {
@@ -9,6 +11,7 @@ window.addEventListener("message", function (e) {
         return update(e.data)
     default:
       return;
+      
   }
 });
 
@@ -22,8 +25,8 @@ function openMenu(data){
   $.each(data["activePlayers"], function (i, v) { 
      $(".online-list").append(`
     <div class="online-box">
-      <div class="left-box"><i class="fa fa-user"  aria-hidden="true"></i></div>
-      <div class="right-box"><div class="name">${v.name} [${v.id}]</div><div class="steam"><span>${v.identifier.substring(0,48)}</span></div></div>
+      <div class="left-box"><i class="fa fa-skull"  aria-hidden="true"></i></div>
+      <div class="right-box"><div class="name">${v.name}</div><div class="steam"><span>${v.identifier.substring(0,48)}</span></div></div>
     </div>
      `);
   });
@@ -36,8 +39,8 @@ function append(variable) {
     $.each(x, function (i, v) { 
       $(".online-list").append(`
       <div class="online-box">
-        <div class="left-box"><i class="fa fa-user"  aria-hidden="true"></i></div>
-        <div class="right-box"><div class="name">${v.name} [${v.id}]</div><div class="steam"><span>${v.identifier.substring(0,48)}</span></div></div>
+        <div class="left-box"><i class="fa fa-skull"  aria-hidden="true"></i></div>
+        <div class="right-box"><div class="name">${v.name}</div><div class="steam"><span>${v.identifier.substring(0,48)}</span></div></div>
       </div>
       `);
     });

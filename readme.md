@@ -6,21 +6,15 @@
 - preview: https://i.imgur.com/6eTZdNX.png
 
 # Asgard PlayerList by ArlenBales
-A simple but good lucking player list UI for RedM. Has NUI focus to allow players to copy steam liceneses for player reporting. Works as drag and drop with RSG by Rexshack Gaming.
+A simple but good lucking player list UI for RedM. Has NUI focus to allow players to copy steam liceneses for player reporting.
 
 # Dependancies
-- rsg-core
+- None/Standalone
 
 # Installation
 - Drag and drop into your resources, make sure it is started
 
-# Usage
-- Press Del to open player list or use command /playerlist (changeable in client file)
-- Config allows restricting usage to users with specific perms that you choose
-- NUI focus to allow copying a players steam ID for reporting and other support purposes
-
 # Changes
 ### 2.0
 - Added ID's above player heads while in the playerlist
-- Configurable distance to show player ID's
 - NUI Focus changed to allow movement and looking around to help get an ID while the menu is open (cursor remains for license copying)

@@ -17,18 +17,15 @@ files {
 }
 
 client_scripts{
-    'client/client.lua',
-    'config.lua'
+    'client/client.lua'
 }
 
 server_scripts {
   '@mysql-async/lib/MySQL.lua',
   'server/server.lua',
-  'config.lua',
 }
 
 escrow_ignore {
-  'config.lua',
   'client/client.lua',
   'server/server.lua',
 }

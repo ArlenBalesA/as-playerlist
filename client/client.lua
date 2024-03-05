@@ -3,16 +3,14 @@ local disconnectedPlayers = {}
 local disPlayerNames = 10
 local playerDistances = {}
 local showIDsAboveHead = false
-local RSGCore = exports['rsg-core']:GetCoreObject()
 AS = {}
 
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-        if IsControlPressed(0, RSGCore.Shared.Keybinds['DEL']) then
-            TriggerEvent('as-playerlist:client:manualUpdate')
+        if IsControlPressed(0, 0x4AF4D473) then
+            TriggerEvent('as-playerlist:client:getPlayers')
             showIDsAboveHead = true
-            --print(showIDsAboveHead)
             Wait(500)
             if playerList then 
                 SendNUIMessage({
@@ -24,7 +22,6 @@ Citizen.CreateThread(function()
                 })
                 SetNuiFocus(1,1)
                 SetNuiFocusKeepInput(true)
-                --print(json.encode(playerList))
             end
         end
     end
@@ -88,9 +85,9 @@ function DrawText3D(x,y,z, text, r,g,b)
 end
 
 
-RegisterNetEvent('as-playerlist:client:manualUpdate')
-AddEventHandler('as-playerlist:client:manualUpdate', function(activePlayers,disPlayers)
-    TriggerServerEvent('as-playerlist:server:manualUpdate')
+RegisterNetEvent('as-playerlist:client:getPlayers')
+AddEventHandler('as-playerlist:client:getPlayers', function(activePlayers,disPlayers)
+    TriggerServerEvent('as-playerlist:server:getPlayers')
     playerList = activePlayers
     disconnectedPlayers = disPlayers
 end)
@@ -107,5 +104,4 @@ end)
 RegisterNUICallback("close",function()
     SetNuiFocus(0,0)
     showIDsAboveHead = false
-    --print(showIDsAboveHead)
 end)
